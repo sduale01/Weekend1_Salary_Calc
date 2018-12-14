@@ -1,8 +1,7 @@
 $(document).ready(function() {
-    console.log('jq');
-
     $('#submitButton').on('click', addEmployeeToList);
     $('ul').on('click', '.deleteEmployeeBtn', deleteTheEmployee);
+    
 })
 
 let monthyCost = 0
@@ -26,7 +25,7 @@ function addEmployeeToList() {
     $('#monthlyCost').html(`Total Monthly: $ ${monthyCost} `)
     
     // changes backgroung of total monthly to red if greater than 20,000
-    if (monthyCost > 200) {
+    if (monthyCost > 20000) {
         $('#monthlyCost').css('background-color', 'red');
     }
 
@@ -40,9 +39,7 @@ function addEmployeeToList() {
 }
 
 function deleteTheEmployee() {
-    $('li').remove();
+    console.log('delete button pressed');
     
     
 }
-
-console.log(monthyCost);
