@@ -1,6 +1,8 @@
 $(document).ready(function() {
     $('#submitButton').on('click', addEmployeeToList);
-    $('ul').on('click', '.deleteEmployeeBtn', deleteTheEmployee);
+
+
+    $('#employeeList').on('click', '.deleteEmployeeBtn', deleteTheEmployee);
     
 })
 
@@ -39,6 +41,8 @@ function addEmployeeToList() {
 }
 
 function deleteTheEmployee() {
+    $(this).parent().remove();
+
     console.log('delete button pressed');
     
     
