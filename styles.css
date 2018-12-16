@@ -1,3 +1,50 @@
-/* .deleteEmployeeBtn {
-    background-color: red;
-} */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    /* grid-template-columns: 100%; */
+}
+
+.gird-item {
+    padding: 20px;
+    border: 1px solid black;
+    
+    
+    
+}
+
+#myTable {
+    font-family: Helvetica;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+#myTable td,
+#myTable th {
+    border: 2px solid #ddd;
+    padding: 8px;
+}
+
+#myTable tr:nth-child(even) {
+    background-color: #d0dff0;
+}
+
+#myTable tr:hover {
+    background-color: #ddd;
+}
+
+#myTable th {
+    padding: 12px 0;
+    background-color: rgba(103, 118, 206, 0.959);
+    color: white;
+}
+

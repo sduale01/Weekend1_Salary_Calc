@@ -12,32 +12,31 @@ let employees = [];
 
 let monthyCost = 0
 
-
 $(document).ready(function() {
 
     // submit button
     $('#submitButton').on('click', addEmployeeToList);
 
     // delete button
-    $('#employeeList').on('click', '.deleteEmployeeBtn', deleteTheEmployee);
+    $('#myTable').on('click', '.deleteEmployeeBtn', deleteTheEmployee);
     
 })
-
-
 
 
 function addEmployeeToList() {
     // Get employee info and add to class
     let newEmployee = new Employee($('.firstNameInput').val(), $('.lastNameInput').val(), $('.idInput').val(), $('.titleInput').val(), $('.annualSalaryInput').val())
     employees.push(newEmployee);
-    //Adds employee to list
-    $('#employeeList').append(`<li>
-     ${$('.firstNameInput').val()}
-     ${$('.lastNameInput').val()}
-     ${$('.idInput').val()}
-     ${$('.titleInput').val()}
-     ${$('.annualSalaryInput').val()}
-     <button class="deleteEmployeeBtn">delete</button>
+
+
+    //Adds employee to table
+    $('#tableBody').append(`<tr><td>
+     ${newEmployee.firstName}</td>
+     <td>${newEmployee.lastName}</td>
+     <td>${newEmployee.id}</td>
+     <td>${newEmployee.title}</td>
+     <td>${newEmployee.annualSalary}</td>
+     <td><button class="deleteEmployeeBtn">delete</button></td>
     </li>`);
 
     // calculates monthly cost of each employee and adds it to monthyCost
@@ -62,9 +61,9 @@ function addEmployeeToList() {
 }
 
 function deleteTheEmployee() {
-    $(this).parent().remove();
+    $(this).parent().parent().remove();
 
-    console.log('delete button pressed');
+    console.log('Should remove table row');
     
     
 }
