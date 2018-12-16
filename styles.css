@@ -3,24 +3,30 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
+    background-color: rgb(248, 246, 246);
 }
 
 .gridContainer {
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
-    /* grid-template-columns: 100%; */
 }
 
-.gird-item {
+/* .grid-item {
     padding: 20px;
     border: 1px solid black;
-    
-    
-    
+} */
+
+.two h1 {
+    text-align: center;
+    font-size: 64px;
 }
 
+.eight p {
+   text-align: left;
+}
+ 
 #myTable {
     font-family: Helvetica;
     border-collapse: collapse;
