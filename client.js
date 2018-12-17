@@ -10,7 +10,7 @@ class Employee {
 
 let employees = [];
 
-let monthyCost = 0
+let monthlyCost = 0
 
 $(document).ready(function() {
 
@@ -39,15 +39,15 @@ function addEmployeeToList() {
      <td><button class="deleteEmployeeBtn">delete</button></td>
     </li>`);
 
-    // calculates monthly cost of each employee and adds it to monthyCost
-    let monthlySalary = ($('.annualSalaryInput').val()) / 12
-    monthyCost += monthlySalary;
+    // calculates monthly cost of each employee and adds it to monthlyCost
+    let monthlySalary = (newEmployee.annualSalary) / 12
+    monthlyCost += monthlySalary;
 
     // changes the total monthly cost when a new employee's salary is added
-    $('#monthlyCost').html(`Total Monthly: $ ${(monthyCost.toFixed(2))} `)
+    $('#monthlyCost').html(`Total Monthly: $ ${(monthlyCost.toFixed(2))} `)
     
     // changes color of total monthly to red if greater than 20,000
-    if (monthyCost > 20000) {
+    if (monthlyCost > 20000) {
         $('#monthlyCost').css('color', 'red');
     }
 
@@ -60,10 +60,10 @@ function addEmployeeToList() {
 
 }
 
+// deletes employee from the table.
 function deleteTheEmployee() {
     $(this).parent().parent().remove();
 
     console.log('Should remove table row');
-    
     
 }
